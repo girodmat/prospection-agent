@@ -1,0 +1,33 @@
+# Correspondance métier -> codes d'activité officiels (NAF) et étiquettes OpenStreetMap.
+# rdv: true = métier où la prise de rendez-vous / réservation en ligne est un vrai argument.
+# Tu peux ajouter tes propres métiers sur le même modèle.
+
+plombier:        {naf: ["43.22A"], osm: ["craft=plumber"]}
+chauffagiste:    {naf: ["43.22B"], osm: ["craft=hvac"]}
+electricien:     {naf: ["43.21A"], osm: ["craft=electrician"]}
+menuisier:       {naf: ["43.32A"], osm: ["craft=carpenter"]}
+serrurier:       {naf: ["43.32B"], osm: ["craft=locksmith", "shop=locksmith"]}
+peintre:         {naf: ["43.34Z"], osm: ["craft=painter"]}
+macon:           {naf: ["43.99C"], osm: ["craft=builder", "craft=stonemason"]}
+couvreur:        {naf: ["43.91B"], osm: ["craft=roofer"]}
+carreleur:       {naf: ["43.33Z"], osm: ["craft=tiler"]}
+paysagiste:      {naf: ["81.30Z"], osm: ["craft=gardener"]}
+coiffeur:        {naf: ["96.02A"], osm: ["shop=hairdresser"], rdv: true}
+estheticienne:   {naf: ["96.02B"], osm: ["shop=beauty"], rdv: true}
+boulangerie:     {naf: ["10.71C", "10.71D"], osm: ["shop=bakery", "shop=pastry"]}
+boucherie:       {naf: ["47.22Z"], osm: ["shop=butcher"]}
+fleuriste:       {naf: ["47.76Z"], osm: ["shop=florist"]}
+restaurant:      {naf: ["56.10A"], osm: ["amenity=restaurant"], rdv: true}
+bar:             {naf: ["56.30Z"], osm: ["amenity=bar", "amenity=cafe"]}
+hotel:           {naf: ["55.10Z"], osm: ["tourism=hotel"], rdv: true}
+garage:          {naf: ["45.20A"], osm: ["shop=car_repair"], rdv: true}
+kine:            {naf: ["86.90E"], osm: ["healthcare=physiotherapist"], rdv: true}
+osteopathe:      {naf: ["86.90F"], osm: ["healthcare=alternative"], rdv: true}
+dentiste:        {naf: ["86.23Z"], osm: ["amenity=dentist"], rdv: true}
+veterinaire:     {naf: ["75.00Z"], osm: ["amenity=veterinary"], rdv: true}
+opticien:        {naf: ["47.78A"], osm: ["shop=optician"], rdv: true}
+auto-ecole:      {naf: ["85.53Z"], osm: ["amenity=driving_school"], rdv: true}
+photographe:     {naf: ["74.20Z"], osm: ["craft=photographer", "shop=photo"], rdv: true}
+agence-immo:     {naf: ["68.31Z"], osm: ["office=estate_agent"]}
+salle-de-sport:  {naf: ["93.13Z"], osm: ["leisure=fitness_centre"], rdv: true}
+nettoyage:       {naf: ["81.21Z"], osm: []}

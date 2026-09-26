@@ -1,0 +1,7 @@
+# Données personnelles des prospects et fichiers générés : ne pas versionner
+sortie/
+prospects.csv
+desinscrits.txt
+suivi.json
+.env
+__pycache__/

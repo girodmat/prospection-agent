@@ -1,0 +1,62 @@
+# Ton profil : c'est la SEULE source d'information de l'agent.
+# Il n'inventera rien qui ne soit pas écrit ici (prix, délais, références…).
+# Remplace chaque « À REMPLIR ». L'agent refuse de tourner tant qu'il en reste.
+
+identite:
+  prenom: "À REMPLIR"
+  nom: "À REMPLIR"
+  entreprise: "À REMPLIR"          # ex. « Mathis G. – Création de sites web »
+  ville: "À REMPLIR"
+  zone: "À REMPLIR"                # ex. « Yvelines et ouest parisien »
+  email: "À REMPLIR"
+  telephone: "À REMPLIR"
+  site: "À REMPLIR"                # ton propre site / portfolio
+  siret: ""                        # facultatif, affiché dans la signature si rempli
+
+presentation:
+  qui_je_suis: "À REMPLIR"         # 2-3 phrases, sincères : parcours, pourquoi tu fais ça
+  ce_que_je_fais: "À REMPLIR"      # ex. « Je crée des sites vitrines rapides, pensés pour le mobile… »
+  pour_qui: "À REMPLIR"            # ta cible : artisans, restaurants, professions de santé…
+  points_forts:                    # 2 à 4 arguments concrets et vrais
+    - "À REMPLIR"
+  references: []                   # ex. « Site de la boulangerie Dupont (Versailles) ». Laisse vide si aucune.
+
+offres:
+  - nom: "Site vitrine – tarif de lancement"
+    prix: "400 € HT"
+    contenu:
+      - "Jusqu'à 5 pages, adapté mobile"
+      - "Formulaire de contact, mentions légales, bases du référencement local"
+      - "2 séries de modifications incluses"
+    delai: "Mise en ligne sous 10 jours après réception des textes et photos"
+    conditions: "Tarif réservé aux premiers clients"
+  - nom: "Hébergement & maintenance"
+    prix: "35 € HT / mois"
+    contenu:
+      - "Hébergement, nom de domaine, sauvegardes, mises à jour de sécurité"
+      - "Petites modifications de contenu"
+    delai: ""
+    conditions: "Sans engagement au-delà de 12 mois"
+
+style:
+  tutoiement: false                # false = vouvoiement
+  ton: "simple, direct, chaleureux, sans jargon technique"
+  appel_a_action: "un appel de 15 minutes cette semaine ou la suivante"
+
+envoi:
+  smtp_serveur: "À REMPLIR"        # ex. smtp.gmail.com (Gmail), ssl0.ovh.net (OVH), smtp.ionos.fr (IONOS)
+  smtp_port: 465                   # 465 (SSL) ou 587 (STARTTLS)
+  imap_serveur: "À REMPLIR"        # ex. imap.gmail.com, ssl0.ovh.net, imap.ionos.fr
+  imap_port: 993
+  identifiant: "À REMPLIR"         # en général ton adresse e-mail
+  # Le mot de passe ne va JAMAIS dans ce fichier : variable d'environnement MOT_DE_PASSE_EMAIL.
+  limite_par_jour: 30              # premiers e-mails + relances par jour (les réponses ne comptent pas)
+  pause_entre_envois: 60           # secondes (±50 % au hasard) pour ne pas ressembler à un robot
+  relance_apres_jours: 4
+  relances_max: 1
+  reponses_auto_max: 3             # au-delà, la conversation t'est confiée
+  notifier: true                   # t'écrit quand un prospect est intéressé ou qu'une réponse demande ton avis
+
+# Modèle utilisé par Claude Code : "" = celui par défaut de ton abonnement, sinon "sonnet" ou "opus"
+# (opus rédige mieux mais consomme plus vite les limites de ton abonnement).
+modele: ""
