@@ -1,5 +1,42 @@
 # Agent de prospection
 
+Deux outils :
+
+- **`recherche.py`** trouve tes prospects : les entreprises d'un métier autour d'une ville, avec un audit de leur site, un score et un constat pour chacune. Gratuit.
+- **`agent.py`** fait ta prospection par e-mail tout seul à partir de cette liste.
+
+## Étape 1 : trouver des prospects (`recherche.py`)
+
+```bash
+python recherche.py --liste                            # métiers disponibles
+python recherche.py plombier Versailles                # 5 km autour de Versailles, 100 entreprises max
+python recherche.py coiffeur "Le Chesnay" --rayon 3 --max 60
+python recherche.py restaurant Versailles --web 20     # + Claude cherche site/e-mail des 20 sans site
+```
+
+Ce qu'il fait :
+
+1. **Liste les entreprises en activité** du métier dans le rayon, via l'annuaire officiel des entreprises
+   (nom, adresse, dirigeant, date de création, effectif) et OpenStreetMap (site, téléphone, e-mail quand ils y sont).
+   Les métiers et leurs codes sont dans `metiers.yaml` : tu peux en ajouter.
+2. **Audite chaque site** depuis ton PC : adapté au mobile, HTTPS, joignable, prise de RDV en ligne
+   (pour les métiers concernés), copyright ancien, téléphone cliquable, vitesse, mentions légales,
+   site fait avec Wix/Jimdo/PagesJaunes. Il récupère aussi l'e-mail de contact affiché sur le site.
+3. **Donne un score** : plus le site est mauvais (ou absent), plus le score est haut. Les entreprises
+   de 50 salariés et plus sont pénalisées (rarement ta cible).
+4. **Écrit `prospects.csv`** trié du plus prometteur au moins prometteur, lisible dans Excel, avec un
+   **constat** prêt à être repris dans l'e-mail (ex. « Le site n'est pas adapté aux téléphones et pas de
+   prise de rendez-vous ou de réservation en ligne »).
+
+`--web N` : pour les N entreprises sans site trouvé, Claude fait une recherche web (via ton abonnement, pas de
+clé API). Un site trouvé n'est retenu que s'il mentionne bien le nom de l'entreprise.
+
+**Relis toujours la liste avant de passer à l'étape 2** : supprime les lignes qui ne te conviennent pas et
+vérifie les constats des meilleurs prospects (l'audit est automatique, il peut se tromper). Les entreprises
+sans e-mail restent dans la liste : ce sont de bons prospects à appeler.
+
+## Étape 2 : l'agent d'envoi (`agent.py`)
+
 Un agent qui fait ta prospection par e-mail tout seul :
 
 1. il écrit un e-mail personnalisé à chaque prospect de ta liste et l'envoie ;
@@ -43,7 +80,8 @@ Remplace chaque « À REMPLIR ». L'agent refuse de démarrer tant qu'il en rest
 
 ## Ta liste de prospects
 
-Copie `prospects.exemple.csv` en `prospects.csv`, une ligne par entreprise :
+`recherche.py` la crée pour toi. Tu peux aussi la faire à la main en copiant `prospects.exemple.csv` en
+`prospects.csv`, une ligne par entreprise :
 
 | colonne | rôle |
 |---|---|
